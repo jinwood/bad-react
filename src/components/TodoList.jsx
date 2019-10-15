@@ -6,12 +6,7 @@ const TodoList = props => {
   return (
     <div>
       <h3>React</h3>
-      <input
-        type="button"
-        value="Click me"
-        onClick={getData}
-        disabled={todos.length}
-      />
+      <input type="button" value="Click me" onClick={getData} />
       <div>
         <div>
           <div key={todos[0].id} className="todo-container">
