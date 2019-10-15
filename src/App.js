@@ -1,5 +1,5 @@
 import React from 'react';
-import Main from './containers/todoList';
+import Main from './components/todoList';
 import './App.css';
 
 function App() {
