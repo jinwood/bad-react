@@ -3,7 +3,7 @@ import getTodos from '../api';
 import { FETCH_DATA, FETCH_DATA_ERROR, FETCH_DATA_SUCCESS } from './actions';
 
 function* getTestData() {
-  yield delay(1000);
+  yield delay(1000); //ignore this
   const result = yield call(getTodos);
   yield put({ type: FETCH_DATA_SUCCESS, payload: result });
 }
