@@ -1,6 +1,5 @@
 import React from 'react';
-import Main from './components/main';
-import logo from './logo.svg';
+import Main from './containers/todoList';
 import './App.css';
 
 function App() {
