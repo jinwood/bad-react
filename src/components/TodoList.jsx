@@ -1,32 +1,37 @@
-import React from 'react';
+import React, { useState } from "react";
 
 const TodoList = props => {
+  const [filterDone, setFilterDone] = useState(false);
   const getData = props.getData;
   const todos = props.todos;
   return (
     <div>
       <h3>React</h3>
       <input type="button" value="Click me" onClick={getData} />
+      <br />
+      {todos.length && (
+        <input
+          type="button"
+          value="filter"
+          onClick={() => setFilterDone(!filterDone)}
+        />
+      )}
+
       <div>
-        <div>
-          <div key={todos[0].id} className="todo-container">
-            <span>{todos[0].title} - </span>
-            <input
-              type="checkbox"
-              defaultChecked={todos[0].completed}
-              className="checkbox"
-            />
-          </div>
-          <div key={todos[1].id} className="todo-container">
-            <span>{todos[1].title} - </span>
-            <input
-              type="checkbox"
-              defaultChecked={todos[1].completed}
-              className="checkbox"
-            />
-          </div>
-        </div>
-        {/* ...etc */}
+        {todos.length &&
+          todos.map(todo => {
+            if (filterDone && todo.completed === false) return null;
+            return (
+              <div key={todo.id} className="todo-container">
+                <span>{todo.title} - </span>
+                <input
+                  type="checkbox"
+                  defaultChecked={todo.completed}
+                  className="checkbox"
+                />
+              </div>
+            );
+          })}
       </div>
     </div>
   );

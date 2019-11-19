@@ -1,24 +1,15 @@
-import { connect } from 'react-redux';
-import TodoList from '../components/TodoList';
-import { FETCH_DATA } from '../redux/actions';
+import { connect } from "react-redux";
+import TodoList from "../components/TodoList";
+import { FETCH_DATA } from "../redux/actions";
 
 const mapStateToProps = state => {
-  const loading = state.loading;
-  const todos = state.todos;
-  const error = state.error;
+  const { loading, todos, error } = state;
 
-  const componentState = {};
-  componentState.loading = loading;
-  componentState.todos = todos;
-  componentState.error = error;
-  return componentState;
+  return { loading, todos, error };
 };
 
 const mapDispatchToProps = dispatch => ({
   getData: () => dispatch({ type: FETCH_DATA })
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(TodoList);
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList);

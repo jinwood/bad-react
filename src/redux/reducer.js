@@ -1,9 +1,9 @@
-import { FETCH_DATA, FETCH_DATA_ERROR, FETCH_DATA_SUCCESS } from './actions';
+import { FETCH_DATA, FETCH_DATA_ERROR, FETCH_DATA_SUCCESS } from "./actions";
 
 const initialState = {
   todos: {},
   loading: false,
-  error: ''
+  error: ""
 };
 
 function reducer(state, action) {
@@ -24,6 +24,8 @@ function reducer(state, action) {
 
     case FETCH_DATA_ERROR:
       return Object.assign({}, state, {});
+    default:
+      return initialState;
   }
 }
 

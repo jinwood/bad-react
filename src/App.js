@@ -1,6 +1,6 @@
-import React from 'react';
-import Main from './components/TodoList';
-import './App.css';
+import React from "react";
+import Main from "./containers/todoList";
+import "./App.css";
 
 function App() {
   return (
